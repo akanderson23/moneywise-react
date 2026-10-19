@@ -1,0 +1,31 @@
+.main-nav ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.main-nav .nav-links {
+    margin-top: 16px;
+}
+
+@media (min-width: 1000px) {
+    .main-nav {
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
+
+    .main-nav ul {
+        display: flex;
+        align-items: center;
+    }
+
+    .main-nav .nav-links {
+        gap: 32px;
+        margin: 0 auto;
+    }
+
+    .main-nav .nav-account {
+        gap: 24px;
+    }
+}

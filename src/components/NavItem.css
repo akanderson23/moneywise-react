@@ -1,0 +1,25 @@
+.nav-item {
+    padding: 12px 0;
+}
+
+.nav-item a {
+    color: var(--navy);
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.nav-item a:hover {
+    color: var(--gold);
+}
+
+.nav-item .btn-navy,
+.nav-item .btn-navy:hover {
+    color: var(--white);
+}
+
+@media (min-width: 1000px) {
+    .nav-item {
+        padding: 0;
+    }
+}

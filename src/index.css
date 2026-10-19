@@ -1,0 +1,86 @@
+/* Colors */
+:root {
+    --navy: #0B2240;
+    --gold: #C5A85C;
+    --cream: #FBF9F5;
+    --white: #FFFFFF;
+    --border: #EAE6DF;
+    --body-text: #505E70;
+}
+
+/* Structure */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Geist', Arial, Helvetica, sans-serif;
+    background-color: var(--cream);
+    color: var(--body-text);
+    margin: 0;
+}
+
+.container {
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    font-family: 'Outfit', Arial, Helvetica, sans-serif;
+    color: var(--navy);
+    margin: 0;
+}
+
+p {
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+}
+
+.btn-navy {
+    background-color: var(--navy);
+    color: var(--white);
+}
+
+/* 700px or larger */
+@media (min-width: 700px) {
+    .container {
+        padding: 0 40px;
+    }
+}
+
+/* 1000px or larger */
+@media (min-width: 1000px) {
+    .container {
+        max-width: 1360px;
+        margin: 0 auto;
+    }
+
+    .columns {
+        display: flex;
+        gap: 24px;
+    }
+
+    .one {
+        flex: 1;
+    }
+
+    .two {
+        flex: 2;
+    }
+}

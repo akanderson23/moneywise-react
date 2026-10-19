@@ -1,0 +1,25 @@
+.toggle-nav {
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.toggle-nav div {
+    width: 25px;
+    height: 2px;
+    background-color: var(--navy);
+    margin: 6px 0;
+}
+
+@media (min-width: 700px) {
+    .toggle-nav {
+        right: 40px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .toggle-nav {
+        display: none;
+    }
+}
