@@ -1,0 +1,49 @@
+/* Story */
+.about .about-story-image {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    margin-bottom: 40px;
+}
+
+.about .about-story h2 {
+    font-size: 30px;
+    margin-bottom: 24px;
+}
+
+.about .about-story p {
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.about .about-story .eyebrow {
+    margin-bottom: 16px;
+}
+
+/* Stats */
+.about .about-stats {
+    padding: 64px 0 0;
+}
+
+@media (min-width: 1000px) {
+    .about .about-story {
+        align-items: center;
+        gap: 80px;
+    }
+
+    .about .about-story-image {
+        flex: 0 0 520px;
+        height: 420px;
+        margin-bottom: 0;
+    }
+
+    .about .about-story h2 {
+        font-size: 36px;
+    }
+
+    .about .about-stats {
+        padding: 64px 0;
+    }
+}

@@ -1,0 +1,12 @@
+.check-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--navy);
+    font-size: 15px;
+    margin-bottom: 16px;
+}
+
+.check-item img {
+    flex-shrink: 0;
+}

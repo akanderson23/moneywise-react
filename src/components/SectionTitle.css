@@ -1,0 +1,21 @@
+.section-title {
+    max-width: 720px;
+    margin-bottom: 40px;
+}
+
+.section-title .section-title-text {
+    font-size: 18px;
+    margin-top: 16px;
+}
+
+.section-title.centered {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 1000px) {
+    .section-title {
+        margin-bottom: 64px;
+    }
+}

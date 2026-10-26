@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom'
 import './NavItem.css'
 
 function NavItem({ link, title, button }) {
   return (
     <li className="nav-item">
-      <a href={link} className={button ? 'btn btn-navy' : ''}>{title}</a>
+      <Link to={link} className={button ? 'btn btn-navy' : ''}>{title}</Link>
     </li>
   )
 }

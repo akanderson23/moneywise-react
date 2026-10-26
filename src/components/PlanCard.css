@@ -1,0 +1,62 @@
+.plan-card {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.plan-card .plan-card-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plan-card h3 {
+    font-size: 24px;
+}
+
+.plan-card .plan-card-badge {
+    background-color: var(--badge-bg);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 100px;
+    padding: 4px 10px;
+}
+
+.plan-card .plan-card-price {
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0 32px;
+    margin-bottom: 32px;
+}
+
+.plan-card .plan-card-price span {
+    font-family: 'Outfit', Arial, Helvetica, sans-serif;
+    color: var(--navy);
+    font-size: 44px;
+    font-weight: 700;
+}
+
+.plan-card .check-list {
+    flex: 1;
+    margin: 0 0 16px;
+}
+
+/* the highlighted Pro plan */
+.plan-card.featured {
+    background-color: var(--navy);
+    border: 2px solid var(--gold);
+}
+
+.plan-card.featured h3 {
+    color: var(--gold);
+}
+
+.plan-card.featured .plan-card-price {
+    border-bottom-color: var(--footer-line);
+    color: var(--light-text);
+}
+
+.plan-card.featured .plan-card-price span,
+.plan-card.featured .check-item {
+    color: var(--white);
+}

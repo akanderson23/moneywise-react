@@ -6,6 +6,11 @@
     --white: #FFFFFF;
     --border: #EAE6DF;
     --body-text: #505E70;
+    --light-text: #C3CDDA;
+    --muted-text: #8A94A6;
+    --footer-line: #1A3355;
+    --table-stripe: #F8F8F9;
+    --badge-bg: #1F3450;
 }
 
 /* Structure */
@@ -24,6 +29,18 @@ body {
     padding: 0 20px;
 }
 
+.section {
+    padding: 64px 0;
+}
+
+.border-top {
+    border-top: 1px solid var(--border);
+}
+
+.navy-bg {
+    background-color: var(--navy);
+}
+
 img {
     max-width: 100%;
     display: block;
@@ -36,9 +53,37 @@ h1, h2, h3, h4 {
     margin: 0;
 }
 
+h1 {
+    font-size: 36px;
+    line-height: 1.15;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
 p {
     line-height: 1.5;
     margin: 0;
+}
+
+.navy-bg h1,
+.navy-bg h2 {
+    color: var(--white);
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
 }
 
 /* Buttons */
@@ -50,11 +95,42 @@ p {
     text-decoration: none;
     padding: 14px 28px;
     border-radius: 8px;
+    border: 1px solid transparent;
+}
+
+.btn-gold {
+    background-color: var(--gold);
+    color: var(--navy);
 }
 
 .btn-navy {
     background-color: var(--navy);
     color: var(--white);
+}
+
+.btn-outline-light {
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.btn-outline-dark {
+    background-color: var(--white);
+    border-color: var(--navy);
+    color: var(--navy);
+}
+
+.btn-full {
+    display: block;
+    width: 100%;
+}
+
+/* Cards */
+.card {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
 }
 
 /* 700px or larger */
@@ -71,6 +147,10 @@ p {
         margin: 0 auto;
     }
 
+    .section {
+        padding: 96px 0;
+    }
+
     .columns {
         display: flex;
         gap: 24px;
@@ -82,5 +162,17 @@ p {
 
     .two {
         flex: 2;
+    }
+
+    h1 {
+        font-size: 52px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    .card {
+        margin-bottom: 0;
     }
 }

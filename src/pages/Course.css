@@ -1,0 +1,72 @@
+/* Hero */
+.course .course-back-link {
+    display: inline-block;
+    color: var(--light-text);
+    font-size: 15px;
+    text-decoration: none;
+    margin-bottom: 32px;
+}
+
+.course .course-back-link:hover {
+    color: var(--gold);
+}
+
+.course .course-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    color: var(--light-text);
+    font-size: 15px;
+    margin-top: 24px;
+}
+
+/* Body */
+.course .course-preview-image {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.course .course-body h2 {
+    font-size: 28px;
+}
+
+.course .course-lessons-title {
+    margin-top: 48px;
+}
+
+.course .course-lesson-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 24px 0 0;
+}
+
+/* Enroll Card */
+.course .course-enroll-card {
+    margin-top: 40px;
+}
+
+.course .course-price {
+    font-family: 'Outfit', Arial, Helvetica, sans-serif;
+    color: var(--navy);
+    font-size: 44px;
+    font-weight: 700;
+    margin: 8px 0 24px;
+}
+
+.course .course-enroll-card .check-list {
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+}
+
+@media (min-width: 1000px) {
+    .course .course-body {
+        gap: 64px;
+        align-items: flex-start;
+    }
+
+    .course .course-enroll-card {
+        margin-top: 0;
+    }
+}

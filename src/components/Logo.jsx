@@ -1,12 +1,12 @@
-import logoIcon from '../assets/icon-chart-line.svg'
+import { Link } from 'react-router-dom'
 import './Logo.css'
 
-function Logo() {
+function Logo({ icon = 'images/icon-chart-line.svg' }) {
   return (
-    <a href="#" className="logo">
-      <img src={logoIcon} alt="" />
+    <Link to="/" className="logo">
+      <img src={icon} alt="" />
       MoneyWise
-    </a>
+    </Link>
   )
 }
 

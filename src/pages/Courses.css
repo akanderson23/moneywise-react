@@ -1,0 +1,87 @@
+/* Filter Bar */
+.courses .courses-filter-bar {
+    border-bottom: 1px solid var(--border);
+    padding: 24px 0;
+}
+
+.courses .courses-filter-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0 0 20px;
+}
+
+.courses .courses-filter-list button {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    color: var(--navy);
+    font-family: 'Geist', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.courses .courses-filter-list button:hover {
+    border-color: var(--navy);
+}
+
+.courses .courses-filter-list button.selected {
+    background-color: var(--navy);
+    border-color: var(--navy);
+    color: var(--white);
+}
+
+.courses .courses-search-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0 16px;
+    height: 40px;
+}
+
+.courses .courses-search-box input {
+    border: none;
+    font-family: 'Geist', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width: 100%;
+}
+
+/* Course Grid */
+.courses .courses-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+@media (min-width: 700px) {
+    .courses .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1000px) {
+    .courses .courses-filter-bar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .courses .courses-filter-list {
+        margin-bottom: 0;
+    }
+
+    .courses .courses-search-box {
+        width: 280px;
+    }
+
+    .courses .courses-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

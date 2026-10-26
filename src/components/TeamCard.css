@@ -1,0 +1,19 @@
+.team-card {
+    text-align: center;
+}
+
+.team-card img {
+    width: 96px;
+    height: 96px;
+    border-radius: 48px;
+    margin: 0 auto 20px;
+}
+
+.team-card h3 {
+    font-size: 18px;
+}
+
+.team-card p {
+    font-size: 14px;
+    margin-top: 4px;
+}

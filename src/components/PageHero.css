@@ -1,0 +1,15 @@
+.page-hero .page-hero-intro {
+    color: var(--light-text);
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 720px;
+    margin-top: 24px;
+}
+
+@media (min-width: 1000px) {
+    .page-hero h1 {
+        font-size: 48px;
+        line-height: 1.2;
+        max-width: 800px;
+    }
+}

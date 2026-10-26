@@ -1,0 +1,41 @@
+/* Compare Table */
+.pricing .pricing-table-wrapper {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow-x: auto;
+}
+
+.pricing .pricing-table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 700px;
+    color: var(--navy);
+    font-size: 14px;
+}
+
+.pricing .pricing-table th {
+    font-family: 'Outfit', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: var(--table-stripe);
+    border-bottom: 2px solid var(--border);
+    height: 64px;
+    text-align: center;
+    padding: 0 16px;
+    width: 180px;
+}
+
+.pricing .pricing-table th:first-child {
+    text-align: left;
+    width: auto;
+}
+
+/* FAQ */
+@media (min-width: 1000px) {
+    .pricing .pricing-faq-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 48px;
+    }
+}

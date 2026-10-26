@@ -1,0 +1,30 @@
+.compare-row td {
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    height: 56px;
+    padding: 0 16px;
+    width: 180px;
+}
+
+.compare-row td:first-child {
+    text-align: left;
+    width: auto;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.compare-row:nth-child(even) td {
+    background-color: var(--table-stripe);
+}
+
+.compare-row:last-child td {
+    border-bottom: none;
+}
+
+.compare-row img {
+    margin: auto;
+}
+
+.compare-row .bold {
+    font-weight: 600;
+}

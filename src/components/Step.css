@@ -1,0 +1,21 @@
+.step {
+    margin-bottom: 40px;
+}
+
+.step p {
+    margin-top: 8px;
+}
+
+.step .step-number {
+    font-family: 'Outfit', Arial, Helvetica, sans-serif;
+    color: var(--gold);
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0 0 20px;
+}
+
+@media (min-width: 1000px) {
+    .step {
+        margin-bottom: 0;
+    }
+}

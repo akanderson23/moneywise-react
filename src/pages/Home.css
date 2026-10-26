@@ -1,0 +1,120 @@
+/* Hero */
+.home .home-hero-intro {
+    color: var(--light-text);
+    font-size: 18px;
+    max-width: 720px;
+    margin-top: 16px;
+}
+
+.home .home-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 32px;
+    margin-bottom: 48px;
+}
+
+.home .home-hero-card {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px 24px;
+    text-align: center;
+}
+
+.home .home-hero-card-icon {
+    background-color: var(--cream);
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+}
+
+.home .home-hero-card p {
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+.home .home-placeholder-bar {
+    background-color: var(--border);
+    height: 12px;
+    border-radius: 6px;
+    margin: 24px auto 0;
+    width: 80%;
+}
+
+.home .home-placeholder-bar.short {
+    width: 55%;
+}
+
+/* Trust Bar */
+.home .home-trust-bar {
+    border-bottom: 1px solid var(--border);
+    padding: 48px 0;
+    text-align: center;
+}
+
+.home .home-trust-bar .eyebrow {
+    color: var(--body-text);
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+}
+
+.home .home-press-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 32px;
+}
+
+.home .home-press-list p {
+    font-family: 'Outfit', Arial, Helvetica, sans-serif;
+    color: var(--muted-text);
+    font-size: 20px;
+    font-weight: 600;
+    padding: 12px 0;
+}
+
+@media (min-width: 1000px) {
+    .home .home-hero .columns {
+        align-items: center;
+        gap: 64px;
+    }
+
+    .home .home-hero-buttons {
+        margin-bottom: 0;
+    }
+
+    .home .home-hero-card {
+        flex: 0 0 520px;
+        height: 380px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px;
+    }
+
+    .home .home-placeholder-bar {
+        width: 360px;
+    }
+
+    .home .home-placeholder-bar.short {
+        width: 240px;
+    }
+
+    .home .home-press-list {
+        justify-content: space-between;
+    }
+
+    .home .home-press-list p {
+        padding: 12px 24px;
+    }
+
+    .home .home-steps {
+        gap: 40px;
+    }
+}
