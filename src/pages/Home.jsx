@@ -3,8 +3,31 @@ import SectionTitle from '../components/SectionTitle'
 import FeatureCard from '../components/FeatureCard'
 import Step from '../components/Step'
 import Testimonial from '../components/Testimonial'
+import Slideshow from '../components/Slideshow'
+import SavingsCalculator from '../components/SavingsCalculator'
 import Cta from '../components/Cta'
 import './Home.css'
+
+const testimonials = [
+  {
+    quote: 'Before MoneyWise, I was always anxious at the end of the quarter. The taxes course and budgeting basics changed everything. Total confidence now.',
+    image: 'images/avatar-maria.png',
+    name: 'Maria G.',
+    role: 'Self-Employed Designer',
+  },
+  {
+    quote: 'I avoided investing because of jargon. The Stock Market Basics course broke down the math so cleanly. I was able to open my index fund within an hour.',
+    image: 'images/avatar-david.png',
+    name: 'David K.',
+    role: 'Software Engineer',
+  },
+  {
+    quote: "The Debt-Free program laid out an exact math plan for my loans. I've already knocked off $8k of high interest debt using their snowball spreadsheet.",
+    image: 'images/avatar-zoe.png',
+    name: 'Zoe S.',
+    role: 'Healthcare Professional',
+  },
+]
 
 function Home() {
   return (
@@ -102,29 +125,25 @@ function Home() {
         </div>
       </section>
 
+      <section className="section border-top">
+        <div className="container">
+          <SectionTitle
+            eyebrow="Savings Calculator"
+            title="Watch Your Money Grow"
+            text="Slide the numbers to see how small monthly deposits turn into real wealth with compound interest."
+          />
+          <SavingsCalculator />
+        </div>
+      </section>
+
       <section className="section navy-bg">
         <div className="container">
-          <SectionTitle eyebrow="What Our Learners Say" title="Real Stories of Financial Comfort" />
-          <div className="columns">
-            <Testimonial
-              quote="Before MoneyWise, I was always anxious at the end of the quarter. The taxes course and budgeting basics changed everything. Total confidence now."
-              image="images/avatar-maria.png"
-              name="Maria G."
-              role="Self-Employed Designer"
-            />
-            <Testimonial
-              quote="I avoided investing because of jargon. The Stock Market Basics course broke down the math so cleanly. I was able to open my index fund within an hour."
-              image="images/avatar-david.png"
-              name="David K."
-              role="Software Engineer"
-            />
-            <Testimonial
-              quote="The Debt-Free program laid out an exact math plan for my loans. I've already knocked off $8k of high interest debt using their snowball spreadsheet."
-              image="images/avatar-zoe.png"
-              name="Zoe S."
-              role="Healthcare Professional"
-            />
-          </div>
+          <SectionTitle eyebrow="What Our Learners Say" title="Real Stories of Financial Comfort" centered />
+          <Slideshow>
+            {testimonials.map((testimonial) => (
+              <Testimonial key={testimonial.name} {...testimonial} />
+            ))}
+          </Slideshow>
         </div>
       </section>
 

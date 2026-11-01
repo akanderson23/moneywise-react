@@ -1,0 +1,13 @@
+.contact-form {
+    margin-bottom: 0;
+}
+
+.contact-form button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.contact-form button:disabled {
+    opacity: 0.7;
+    cursor: wait;
+}

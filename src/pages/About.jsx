@@ -3,6 +3,8 @@ import SectionTitle from '../components/SectionTitle'
 import FeatureCard from '../components/FeatureCard'
 import TeamCard from '../components/TeamCard'
 import Stat from '../components/Stat'
+import ContactForm from '../components/ContactForm'
+import VideoCard from '../components/VideoCard'
 import './About.css'
 
 function About() {
@@ -72,6 +74,25 @@ function About() {
           <Stat number="200+" label="Lessons & Templates" />
           <Stat number="4.9" label="Average Rating" />
           <Stat number="12" label="Expert Instructors" />
+        </div>
+      </section>
+
+      <section id="contact" className="section">
+        <div className="container">
+          <SectionTitle
+            eyebrow="Get In Touch"
+            title="Contact Us"
+            text="Have a question about a course, pricing, or partnering with MoneyWise? Send us a message and our team will get back to you within one business day."
+          />
+          <div className="about-contact">
+            <ContactForm />
+            <VideoCard
+              eyebrow="Start Learning Today"
+              title="Watch: What to Do When You Get Paid"
+              video="https://www.youtube.com/embed/x2TimBKuof0"
+              text="Not ready to send a message yet? Watch this quick video to see the kind of practical, jargon-free lessons you will find in every MoneyWise course."
+            />
+          </div>
         </div>
       </section>
     </div>

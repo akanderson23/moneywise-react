@@ -27,6 +27,10 @@
 
 @media (min-width: 1000px) {
     .testimonial {
-        padding: 40px;
+        padding: 56px;
+    }
+
+    .testimonial .testimonial-quote {
+        font-size: 20px;
     }
 }

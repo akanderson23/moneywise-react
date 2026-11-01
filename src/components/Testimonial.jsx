@@ -2,7 +2,7 @@ import './Testimonial.css'
 
 function Testimonial({ quote, image, name, role }) {
   return (
-    <div className="testimonial card one">
+    <div className="testimonial card">
       <p className="testimonial-quote">"{quote}"</p>
       <div className="testimonial-person">
         <img src={image} alt={name} />

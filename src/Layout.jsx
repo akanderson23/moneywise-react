@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
+import { Toaster } from 'react-hot-toast'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
@@ -18,6 +19,13 @@ function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <Toaster
+        position="bottom-center"
+        toastOptions={{
+          style: { fontFamily: "'Geist', Arial, Helvetica, sans-serif", color: 'var(--navy)', borderRadius: '8px' },
+          success: { iconTheme: { primary: 'var(--gold)', secondary: 'var(--white)' } },
+        }}
+      />
     </>
   )
 }

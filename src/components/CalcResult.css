@@ -1,0 +1,30 @@
+.calc-result {
+    background-color: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.calc-result p {
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.calc-result h3 {
+    font-size: 20px;
+}
+
+.calc-result.highlight {
+    grid-column: 1 / -1;
+    background-color: var(--navy);
+    border-color: var(--navy);
+}
+
+.calc-result.highlight p {
+    color: var(--light-text);
+}
+
+.calc-result.highlight h3 {
+    color: var(--gold);
+    font-size: 30px;
+}

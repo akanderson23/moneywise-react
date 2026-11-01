@@ -1,3 +1,12 @@
+/* hidden on small screens until the toggle opens it */
+.main-nav {
+    display: none;
+}
+
+.main-nav.open {
+    display: block;
+}
+
 .main-nav ul {
     list-style-type: none;
     padding-left: 0;
@@ -9,7 +18,8 @@
 }
 
 @media (min-width: 1000px) {
-    .main-nav {
+    .main-nav,
+    .main-nav.open {
         display: flex;
         align-items: center;
         flex: 1;

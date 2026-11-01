@@ -1,12 +1,19 @@
 import './ToggleNav.css'
 
-function ToggleNav() {
+function ToggleNav({ open, onToggle }) {
   return (
-    <div className="toggle-nav">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+    <button
+      type="button"
+      className={open ? 'toggle-nav open' : 'toggle-nav'}
+      onClick={onToggle}
+      aria-label={open ? 'Close menu' : 'Open menu'}
+      aria-expanded={open}
+      aria-controls="main-nav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   )
 }
 

@@ -27,7 +27,19 @@
     padding: 64px 0 0;
 }
 
+/* Contact */
+.about .about-contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
 @media (min-width: 1000px) {
+    .about .about-contact {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: start;
+    }
+
     .about .about-story {
         align-items: center;
         gap: 80px;

@@ -1,0 +1,29 @@
+.slider-field {
+    margin-bottom: 28px;
+}
+
+.slider-field .slider-field-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+}
+
+.slider-field label {
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.slider-field span {
+    font-family: 'Outfit', Arial, Helvetica, sans-serif;
+    color: var(--navy);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.slider-field input {
+    width: 100%;
+    accent-color: var(--gold);
+    cursor: pointer;
+}

@@ -1,0 +1,39 @@
+.savings-calculator {
+    margin-bottom: 0;
+    padding: 24px;
+}
+
+.savings-calculator .savings-calculator-inputs {
+    margin-bottom: 32px;
+}
+
+.savings-calculator .savings-calculator-results {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.savings-calculator .savings-calculator-chart {
+    min-width: 0;
+}
+
+@media (min-width: 1000px) {
+    .savings-calculator {
+        display: flex;
+        gap: 48px;
+        align-items: center;
+        padding: 48px;
+    }
+
+    .savings-calculator .savings-calculator-inputs {
+        flex: 0 0 360px;
+        margin-bottom: 0;
+    }
+
+    .savings-calculator .savings-calculator-chart {
+        flex: 1;
+    }
+}
