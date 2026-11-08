@@ -1,9 +1,45 @@
+import { useEffect, useState } from 'react'
 import PageHero from '../components/PageHero'
 import CourseCard from '../components/CourseCard'
+import FilterButton from '../components/FilterButton'
 import Cta from '../components/Cta'
 import './Courses.css'
 
+// the live render server; set VITE_SERVER_URL to test against a local one
+const SERVER_URL = import.meta.env.VITE_SERVER_URL || 'https://moneywise-server-plb5.onrender.com'
+
+const categories = ['All', 'Budgeting', 'Investing', 'Debt', 'Retirement', 'Taxes']
+
 function Courses() {
+  const [courses, setCourses] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [failed, setFailed] = useState(false)
+  const [selectedCategory, setSelectedCategory] = useState('All')
+  const [searchText, setSearchText] = useState('')
+
+  // pull the course list from the server when the page opens
+  useEffect(() => {
+    const getCourses = async () => {
+      try {
+        const response = await fetch(`${SERVER_URL}/api/courses`)
+        if (!response.ok) throw new Error(`Server responded with ${response.status}`)
+        setCourses(await response.json())
+      } catch (error) {
+        console.log(error)
+        setFailed(true)
+      }
+      setLoading(false)
+    }
+
+    getCourses()
+  }, [])
+
+  const showingCourses = courses.filter((course) => {
+    const matchesCategory = selectedCategory === 'All' || course.category === selectedCategory
+    const matchesSearch = course.title.toLowerCase().includes(searchText.toLowerCase())
+    return matchesCategory && matchesSearch
+  })
+
   return (
     <div className="courses">
       <PageHero
@@ -15,123 +51,60 @@ function Courses() {
       <section className="courses-filter-bar">
         <div className="container">
           <ul className="courses-filter-list">
-            <li><button className="selected">All</button></li>
-            <li><button>Budgeting</button></li>
-            <li><button>Investing</button></li>
-            <li><button>Debt</button></li>
-            <li><button>Retirement</button></li>
-            <li><button>Taxes</button></li>
+            {categories.map((category) => (
+              <FilterButton
+                key={category}
+                title={category}
+                selected={category === selectedCategory}
+                onSelect={() => setSelectedCategory(category)}
+              />
+            ))}
           </ul>
           <div className="courses-search-box">
             <img src="images/icon-search.svg" alt="" />
-            <input type="text" placeholder="Search courses..." />
+            <input
+              type="text"
+              placeholder="Search courses..."
+              aria-label="Search courses"
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+            />
           </div>
         </div>
       </section>
 
       <section className="section">
         <div className="container">
-          {/* these will be built from the json file in a later part */}
+          {loading && (
+            <div className="courses-message" role="status">
+              <div className="courses-spinner"></div>
+              <p>Loading courses... this can take up to a minute while the server wakes up.</p>
+            </div>
+          )}
+
+          {failed && (
+            <p className="courses-message" role="alert">Sorry, the courses could not be loaded. Please try again later.</p>
+          )}
+
+          {!loading && !failed && showingCourses.length === 0 && (
+            <p className="courses-message">No courses match your search.</p>
+          )}
+
           <div className="courses-grid">
-            <CourseCard
-              title="Budgeting Fundamentals"
-              category="Budgeting"
-              instructor="Sarah Miller, CFP"
-              duration="2h 30m"
-              lessons={12}
-              level="Beginner"
-              description="Build a monthly budget you can actually stick to using the 50/30/20 method."
-              image="images/course-budgeting.svg"
-              link="/course"
-            />
-            <CourseCard
-              title="Stock Market Basics"
-              category="Investing"
-              instructor="David Chen, Portfolio Lead"
-              duration="3h 45m"
-              lessons={16}
-              level="Beginner"
-              description="Learn how stocks work, how prices move, and how to buy your first share with confidence."
-              image="images/course-investing.svg"
-              link="/pricing"
-            />
-            <CourseCard
-              title="Credit Score Mastery"
-              category="Debt"
-              instructor="James Holloway, Analyst"
-              duration="1h 15m"
-              lessons={8}
-              level="Beginner"
-              description="Understand what goes into your credit score and the habits that raise it fastest."
-              image="images/course-credit.svg"
-              link="/pricing"
-            />
-            <CourseCard
-              title="Retirement Planning 101"
-              category="Retirement"
-              instructor="Elena Rostova, Advisor"
-              duration="3h 10m"
-              lessons={14}
-              level="Intermediate"
-              description="Compare 401(k)s and IRAs and figure out how much you need to save to retire comfortably."
-              image="images/course-retirement.svg"
-              link="/pricing"
-            />
-            <CourseCard
-              title="Tax Strategy Simplified"
-              category="Taxes"
-              instructor="Mark Torres, CPA"
-              duration="2h 20m"
-              lessons={10}
-              level="Intermediate"
-              description="Decode tax brackets, deductions, and credits so you keep more of every paycheck."
-              image="images/course-taxes.svg"
-              link="/pricing"
-            />
-            <CourseCard
-              title="Emergency Fund Blueprint"
-              category="Budgeting"
-              instructor="Sarah Miller, CFP"
-              duration="1h 00m"
-              lessons={6}
-              level="Beginner"
-              description="Set a savings target and build a cash cushion that protects you from surprise expenses."
-              image="images/course-emergency.svg"
-              link="/pricing"
-            />
-            <CourseCard
-              title="Debt Payoff Strategies"
-              category="Debt"
-              instructor="James Holloway, Analyst"
-              duration="2h 05m"
-              lessons={9}
-              level="Intermediate"
-              description="Compare the snowball and avalanche methods and build a plan to become debt free."
-              image="images/course-debt.svg"
-              link="/pricing"
-            />
-            <CourseCard
-              title="Index Fund Investing"
-              category="Investing"
-              instructor="David Chen, Portfolio Lead"
-              duration="2h 40m"
-              lessons={11}
-              level="Intermediate"
-              description="Discover why low-cost index funds beat most active investors and how to start with any amount."
-              image="images/course-index-funds.svg"
-              link="/pricing"
-            />
-            <CourseCard
-              title="Paying for College"
-              category="Budgeting"
-              instructor="Elena Rostova, Advisor"
-              duration="1h 50m"
-              lessons={8}
-              level="Beginner"
-              description="Navigate FAFSA, scholarships, and 529 plans to keep student loans to a minimum."
-              image="images/course-college.svg"
-              link="/pricing"
-            />
+            {showingCourses.map((course) => (
+              <CourseCard
+                key={course._id}
+                title={course.title}
+                category={course.category}
+                instructor={course.instructor}
+                duration={course.duration}
+                lessons={course.lessons}
+                level={course.level}
+                description={course.description}
+                image={`${SERVER_URL}/${course.img_name}`}
+                link={course.link}
+              />
+            ))}
           </div>
         </div>
       </section>

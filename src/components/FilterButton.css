@@ -1,0 +1,21 @@
+.filter-button button {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    color: var(--navy);
+    font-family: 'Geist', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.filter-button button:hover {
+    border-color: var(--navy);
+}
+
+.filter-button button.selected {
+    background-color: var(--navy);
+    border-color: var(--navy);
+    color: var(--white);
+}
